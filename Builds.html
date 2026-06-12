@@ -103,7 +103,7 @@
 
     /* ─── Hero ──────────────────────────────────────── */
     .hero {
-      margin-bottom: 4rem;
+      margin-bottom: 1rem;
     }
 
     .hero-kicker {
@@ -113,24 +113,6 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 400;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      margin-bottom: 1rem;
-      max-width: 640px;
-    }
-
-    .hero p {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 520px;
     }
 
 	/* ─── Store section ────────────────────────── */
@@ -143,7 +125,6 @@
       border-bottom: 1px solid var(--rule);
       padding-bottom: 0.75rem;
       margin-bottom: 1.5rem;
-	  text-align: center;
     }
 	
 	.store-banner { 
@@ -153,8 +134,9 @@
 	width: 65%;
 	}
 
-    /* ─── Log cards section ────────────────────────── */
-    .logs-heading {
+
+    /* ─── build cards section ────────────────────────── */
+    .builds-heading {
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.09em;
@@ -163,16 +145,16 @@
       border-bottom: 1px solid var(--rule);
       padding-bottom: 0.75rem;
       margin-bottom: 1.5rem;
-	  padding-top: 20px;
+	    text-align: center;
     }
 
-    .logs-grid {
+    .builds-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
       gap: 1rem;
     }
 	
-	.logs-footing {
+	.builds-footing {
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.09em;
@@ -183,8 +165,8 @@
       margin-bottom: 1.5rem;
     }
 
-    /* ─── Individual Log card ──────────────────────── */
-    .log-card {
+    /* ─── Individual build card ──────────────────────── */
+    .build-card {
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
@@ -194,10 +176,47 @@
       padding: 1.4rem 1.5rem;
       text-decoration: none;
       color: var(--ink);
+      -webkit-text-stroke: .75px black; /* Add a white stroke to the text */
       transition: border-color 0.14s, box-shadow 0.14s;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      /* height: 12rem; */ /* Uncomment to set a fixed height */
     }
 
-    .log-card:hover {
+    .firebrand {
+      background-image: url("Firebrand_icon.png");
+    }
+
+    .luminary {
+      background-image: url("Luminary_icon.png");
+    }
+
+    .scrapper {
+      background-image: url("Scrapper_icon.png");
+    }
+
+    .amalgam {
+      background-image: url("Amalgam_icon.png");
+    }
+
+    .paragon {
+      background-image: url("Paragon_icon.png");
+    }
+
+    .warrior {
+      background-image: url("Warrior_icon.png");
+    }
+
+    .reaper {
+      background-image: url("Reaper_icon.png");
+    }
+
+    .untamed {
+      background-image: url("Untamed_icon.png");
+    }
+
+    .build-card:hover {
       border-color: var(--accent);
       box-shadow: 0 2px 12px rgba(45,107,228,.09);
     }
@@ -209,14 +228,15 @@
     }
 
     .card-title {
-      font-weight: 600;
+      font-weight: 900;
       font-size: 0.95rem;
-      color: var(--ink);
+      color: white;
     }
 
     .card-desc {
-      font-size: 0.82rem;
-      color: var(--muted);
+      font-size: 0.90rem;
+      font-weight: 900;
+      color: white;
       line-height: 1.5;
     }
 
@@ -236,7 +256,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .log-card { transition: none; }
+      .build-card { transition: none; }
     }
   </style>
 </head>
@@ -247,45 +267,29 @@
        To add a link: copy one <li> and update the href
        and text to match your new page filename.
        ════════════════════════════════════════════════════ -->
-  <header>
+<header>
     <nav aria-label="Site navigation">
       <!-- Top Bar Site Name -->
       <a class="nav-brand" href="index.html">Eternal Infamy [Fate] (Work in Progress)</a>
 
       <ul class="nav-links">
-        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <!-- ADD NAV LINKS BELOW — copy a line and change the href + label -->
-        <li><a href="Fight Logs.html">All Fight Logs</a></li>  
-        <li><a href="builds.html">Builds</a></li>    
+        <li><a href="Fight logs.html">All Fight Logs</a></li>  
+        <li><a href="builds.html" aria-current="page">Builds</a></li>    
+        <!-- <li><a href="blog.html">Blog</a></li>     -->
         <!-- <li><a href="contact.html">Contact</a></li> -->
       </ul>
     </nav>
   </header>
-
   <main>
 
     <!-- ════════════════════════════════════════════════════
          HERO  — edit the title and description
          ════════════════════════════════════════════════════ -->
     <section class="hero">
-      <span class="hero-kicker">[Fate]
-		  <p>Work in Progress</p>
-	  </span>
-      <!-- ★ SITE TITLE -->
-      <h1>Eternal Infamy [Fate]</h1>
-      <!-- ★ Change this to a short description of your site -->
-      <p>One stop shop for Fate stuff.</p>
+      <span class="hero-kicker">Builds</span>
     </section>
-
-	<section aria-label="store">
-      <p class="store-heading"> <strong> Grab some merch from the Fate store!!! </strong> </p>
-		<a target="_blank" rel="noopener noreferrer" href="https://eternal-infamy.printify.me/">
-			<img class="store-banner" src="Store_Banner.jpg">
-		</a>
-      <div>
-	  </div>	
-	</section>
-
     <!-- ════════════════════════════════════════════════════
          PAGE CARDS
          HOW TO ADD A NEW PAGE:
@@ -304,33 +308,49 @@
 
          6. Commit / push — GitHub Pages does the rest.
          ════════════════════════════════════════════════════ -->
-    <section aria-label="logs">
-      <p class="logs-heading"> <strong> LATEST WvW Log Summary — WVW Log Review </strong> </p>
-      <div class="logs-grid">
+    <section aria-label="builds">
+      <p class="builds-heading"> <strong> Current Core Guild Builds</strong> </p>
+      <div class="builds-grid">
 
-        <!-- ★ CARD 1 — uncomment, then edit href / emoji / title / desc -->
-        <a class="log-card" target="_blank" rel="noopener noreferrer" href="Fate 6-10 - WvW Log Summary — WVW Log Review.html">
-          <span class="card-emoji">⚔️</span>
-          <span class="card-title">Fate 6-10</span>
-          <span class="card-desc">Fate 6-10 - WvW Log Summary — WVW Log Review</span>
+        <a class="build-card scrapper" target="_blank" rel="noopener noreferrer" href="https://en.gw2skills.net/editor/?PeABk6l7lRwaYOMPWJeyT/NNA-DWJYjRPfhEUBUdEEeK471hQIaRwgtg1YlNLAA-w">
+          <span class="card-title">Scrapper</span>
+          <span class="card-desc">Fate Support Scrapper</span>
         </a>
 
-        <!-- ★ CARD 2 -->
-        <a class="log-card" target="_blank" rel="noopener noreferrer" href="Fate 6-8 - WvW Log Summary — WVW Log Review.html">
-          <span class="card-emoji">⚔️</span>
-          <span class="card-title">Fate 6-8</span>
-          <span class="card-desc">Fate 6-8 - WvW Log Summary — WVW Log Review</span>
+        <a class="build-card paragon" target="_blank" rel="noopener noreferrer" href="https://gw2skills.net/editor/?PKwEwEmpsXGM7jJzIx0/6c6B-DWJYjRHfhEUBUdEkeKo7JiQEm9wbp9NLA-w">
+          <span class="card-title">Paragon</span>
+          <span class="card-desc">Fate Support Paragon</span>
         </a>
 
-        <!-- ★ CARD 3 -->
-        <a class="log-card" target="_blank" rel="noopener noreferrer" href="Fate 6-7 - WvW Log Summary — WVW Log Review.html">
-          <span class="card-emoji">⚔️</span>
-          <span class="card-title">Fate 6-7</span>
-          <span class="card-desc">Fate 6-7 - WvW Log Summary — WVW Log Review</span>
+        <a class="build-card firebrand" target="_blank" rel="noopener noreferrer" href="https://gw2skills.net/editor/?PWwEQLtrMC2FDjxxMxh7q6tC-DWJYnRNfh0UBURIkeG43JiQImpgRVw0MiNNAA-w">
+          <span class="card-title">Firebrand</span>
+          <span class="card-desc">Fate SA Burn Support Firebrand</span>
         </a>
-	</div>
-	<div class="logs-footing" style="padding-top: 10px; text-align: center;">
-		<p> To see addition fight logs check out the <a href="Fight Logs.html"> Fight Logs</a> page</p>
+
+        <a class="build-card luminary" target="_blank" rel="noopener noreferrer" href="https://gw2skills.net/editor/?PWgEEiWmLDjBzeZzYxfVP/B-DWRYzRFjO4CppQoiKI8EQ2PEBIgeN63pEA-w">
+          <span class="card-title">Luminary</span>
+          <span class="card-desc">Fate DPS Daze Luminary</span>
+        </a>
+
+        <a class="build-card amalgam " target="_blank" rel="noopener noreferrer" href="https://gw2skills.net/editor/?PegAIJlJn86Kc2ZNvu2d3W+WtTPFo96THA-DWJYzRVfh0URUXoURGY7ZhAEw+5to/qFA-w">
+          <span class="card-title">Amalgam</span>
+          <span class="card-desc">Fate DPS Amalgam </span>
+        </a>
+
+        <a class="build-card warrior" target="_blank" rel="noopener noreferrer" href="https://gw2skills.net/editor/?PKwEQj9psBGFbiJyIxxXRbpD-DWRYzRNmOsCppEouSozIQ2zCBIg9wrR/OlAA-w">
+          <span class="card-title">Warrior</span>
+          <span class="card-desc">Fate DPS Warrior</span>
+        </a>
+
+        <a class="build-card reaper" target="_blank" rel="noopener noreferrer" href="https://gw2skills.net/editor/?PSgAYFlJwOYIsFWJO2XmNbA-DWJYiRFfh0UBkZKUREY7tgCEwY4to/CGA-w">
+          <span class="card-title">Reaper</span>
+          <span class="card-desc">Fate DPS Reaper</span>
+        </a>
+
+        <a class="build-card untamed" target="_blank" rel="noopener noreferrer" href="#">
+          <span class="card-title">Untamed (BUILD MISSING RN)</span>
+          <span class="card-desc">Fate DPS Untamed</span>
+        </a>
 	</div>
 	
     </section>
