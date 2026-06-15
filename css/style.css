@@ -1,0 +1,335 @@
+/* ═══════════════════════════════════════════════════
+   style.css — Shared styles for Eternal Infamy [Fate]
+   ═══════════════════════════════════════════════════ */
+
+/* ─── Design tokens ─────────────────────────────── */
+:root {
+  --bg:        #f7f6f2;
+  --surface:   #ffffff;
+  --ink:       #1c1c1c;
+  --muted:     #767676;
+  --rule:      #e2e0d8;
+  --accent:    #2d6be4;
+  --accent-bg: #eef2fc;
+  --radius:    8px;
+  --max:       860px;
+  --sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --serif: 'Georgia', 'Times New Roman', serif;
+}
+
+/* ─── Dark mode tokens ──────────────────────────── */
+  [data-theme="dark"] {
+    --bg:        #111113;
+    --surface:   #1c1c1f;
+    --ink:       #e8e6e0;
+    --muted:     #8a8880;
+    --rule:      #2e2d2a;
+    --accent:    #6b9cf5;
+    --accent-bg: #1a2540;
+  }
+
+  /* ─── Dark mode toggle button ───────────────────── */
+  .theme-toggle {
+    display: block;
+    margin-left: auto;
+    margin-right: 20.5%;
+    max-width: var(--max);
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0.35rem 0.6rem;
+    transition: border-color 0.12s, color 0.12s, background 0.12s;
+    flex-shrink: 0;
+    margin-top: 2rem;
+    width: fit-content;
+  }
+
+  .theme-toggle:hover {
+    background: var(--accent-bg);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+/* ─── Reset ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: var(--accent); }
+a:hover { opacity: .8; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+/* ─── Nav ───────────────────────────────────────── */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+nav {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.nav-brand {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: background 0.12s, color 0.12s;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+/* ─── Dark mode toggle button ───────────────────── */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.35rem 0.6rem;
+  transition: border-color 0.12s, color 0.12s, background 0.12s;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ─── Main content area ─────────────────────────── */
+main {
+  flex: 1;
+  max-width: var(--max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 5rem;
+}
+
+/* ─── Hero ──────────────────────────────────────── */
+.hero {
+  margin-bottom: 4rem;
+}
+
+.hero-kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  max-width: 640px;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 520px;
+}
+
+/* ─── Store section ──────────────────────────────── */
+.store-heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.store-banner {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+/* ─── Section headings (shared pattern) ─────────── */
+.logs-heading,
+.builds-heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.logs-heading {
+  padding-top: 20px;
+}
+
+.logs-footing {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Grids ──────────────────────────────────────── */
+.logs-grid,
+.builds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+/* ─── Cards (shared base) ────────────────────────── */
+.log-card,
+.build-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.14s, box-shadow 0.14s;
+}
+
+.log-card:hover,
+.build-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 12px rgba(45,107,228,.09);
+}
+
+/* ─── Log card specifics ─────────────────────────── */
+.card-emoji {
+  font-size: 1.4rem;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.card-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ─── Build card specifics ───────────────────────── */
+.build-card {
+  -webkit-text-stroke: .75px black;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.build-card .card-title {
+  font-weight: 900;
+  font-size: 0.95rem;
+  color: white;
+}
+
+.build-card .card-desc {
+  font-size: 0.90rem;
+  font-weight: 900;
+  color: white;
+}
+
+/* ─── Footer ─────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ─── Responsive ─────────────────────────────────── */
+@media (max-width: 520px) {
+  nav { height: auto; padding: 0.75rem 1rem; flex-wrap: wrap; }
+  .nav-links { gap: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .log-card,
+  .build-card { transition: none; }
+}
