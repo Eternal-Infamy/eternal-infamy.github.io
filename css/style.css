@@ -246,12 +246,29 @@ main {
   margin-bottom: 1.5rem;
 }
 
+.logs-archive-month-heading {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.25rem;
+  padding-top: 0.50rem;
+}
+
 /* ─── Grids ──────────────────────────────────────── */
 .logs-grid,
 .builds-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 1rem;
+}
+
+.logs-archive-columns {
+  display: column;
+  column-count: 2;
+  column-gap: 2rem;
 }
 
 /* ─── Cards (shared base) ────────────────────────── */
