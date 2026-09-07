@@ -257,6 +257,69 @@ main {
   padding-top: 0.50rem;
 }
 
+/* ── Logs Archive: collapsible accordion + search ── */
+    .archive-search {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 0 1rem;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.95rem;
+      border: 1px solid rgba(128,128,128,0.4);
+      border-radius: 6px;
+      background: transparent;
+      color: inherit;
+      font-family: inherit;
+    }
+    .logs-archive-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .archive-month {
+      border: 1px solid rgba(128,128,128,0.25);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .archive-month summary {
+      cursor: pointer;
+      padding: 0.55rem 0.9rem;
+      font-weight: 600;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      user-select: none;
+    }
+    .archive-month summary::-webkit-details-marker { display: none; }
+    .archive-month summary::before {
+      content: "▸";
+      display: inline-block;
+      transition: transform 0.15s ease;
+      font-weight: normal;
+      opacity: 0.7;
+    }
+    .archive-month[open] summary::before { transform: rotate(90deg); }
+    .archive-month summary:hover { background: rgba(128,128,128,0.08); }
+    .archive-count { font-weight: 400; opacity: 0.6; font-size: 0.85em; }
+    .archive-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 0.35rem 0.6rem;
+      padding: 0.6rem 0.9rem 0.9rem;
+      margin: 0;
+    }
+    .archive-list a {
+      font-size: 0.9rem;
+      padding: 0.25rem 0.4rem;
+      border-radius: 4px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .archive-list a:hover { background: rgba(128,128,128,0.12); text-decoration: underline; }
+    .archive-month.no-match { display: none; }
+    .archive-list a.no-match { display: none; }
+
 /* ─── Grids ──────────────────────────────────────── */
 .logs-grid,
 .builds-grid {
