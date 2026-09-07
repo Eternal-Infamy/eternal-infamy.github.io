@@ -231,6 +231,19 @@ main {
   text-align: center;
 }
 
+.builds-video-heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding-top: 20px;
+}
+
 .logs-heading {
   padding-top: 20px;
 }
